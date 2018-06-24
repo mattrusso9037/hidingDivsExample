@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Hiding Divs
+    </title>
+</head>
+
+<body>
+    <input type="radio" name="loadType" value="import"> Import
+    </input>
+    <input type="radio" name="loadType" value="export"> Export
+    </input>
+    <br />
+    <button onClick=handleDisplay()>
+        submit
+    </button>
+    <div id="import">
+        <h1>
+            IMPORT
+        </h1>
+        <p>
+            FOO
+        </p>
+    </div>
+    <div id="export">
+        <h1>
+            EXPORT
+        </h1>
+        <p>
+            BAR
+        </p>
+    </div>
+</body>
+
+</html>
+
+<style type="text/css">
+    div {
+        border: 1px solid;
+        color: white;
+        width: 60%;
+        margin: 20%;
+        height: 33.33%
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        margin-top: 20%; 
+    }
+
+    button {
+        margin-top: 25px
+    }
+
+    #import {
+        background: red;
+        display: none;
+    }
+
+    #export {
+        background: blue;
+        display: none;
+    }
+</style>
+
+<script type="text/javascript">
+    function handleDisplay() {
+        var inputChoice = document.getElementsByName('loadType');
+
+        for (var i = 0; i < inputChoice.length; i++) {
+            if (inputChoice[i].checked === true) {
+                document.getElementById(inputChoice[i].value).style.display = 'block'
+            } else {
+                document.getElementById(inputChoice[i].value).style.display = 'none'
+            }
+        }
+    }
+</script>
